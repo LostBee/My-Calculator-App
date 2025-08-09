@@ -9,10 +9,10 @@ y = int(input("Enter the second number: "))
 if operation == "add":
     print(f"{x}+{y} = {x+y}")
 elif operation == "subtract":
-     print(f"{x}+{y} = {x+y}")
+     print(f"{x}-{y} = {x-y}")
 elif operation == "multiply":
-      print(f"{x}+{y} = {x+y}")
+      print(f"{x}*{y} = {x*y}")
 elif operation == "divide":
-      print(f"{x}+{y} = {x+y}")
+      print(f"{x}/{y} = {x/y}")
 else:
     print("Invalid Operation")
