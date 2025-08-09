@@ -1,6 +1,18 @@
-# Ask user for the 1st number and convert it into integer
+#Ask the user to choose an operation
+operation = input("What do you want to do? (add, subtract, multiply, divide): ")
+
+# Get the numbers
 x = int(input("Enter the first number: "))
-# Ask user for the 2nd number and convert it into integer
 y = int(input("Enter the second number: "))
-# Calculate and print the sum
-print(x + y)
+
+#Decide which operation to perform
+if operation == "add":
+    print(x+y)
+elif operation == "subtract":
+    print(x-y)
+elif operation == "multiply":
+    print(x*y)
+elif operation == "divide":
+    print(x/y)
+else:
+    print("Invalid Operation")
