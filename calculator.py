@@ -7,12 +7,12 @@ y = int(input("Enter the second number: "))
 
 #Decide which operation to perform
 if operation == "add":
-    print(x+y)
+    print(f"{x}+{y} = {x+y}")
 elif operation == "subtract":
-    print(x-y)
+     print(f"{x}+{y} = {x+y}")
 elif operation == "multiply":
-    print(x*y)
+      print(f"{x}+{y} = {x+y}")
 elif operation == "divide":
-    print(x/y)
+      print(f"{x}+{y} = {x+y}")
 else:
     print("Invalid Operation")
