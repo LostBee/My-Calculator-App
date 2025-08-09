@@ -1,43 +1,46 @@
 # server.py
 
-# Import the tools we need
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import calculator #logic files
+import calculator  # Your original logic file
 
-# Flash application instance
-app = Flash(__name__)
+# --- Create the Flask App ---
+app = Flask(__name__)
+# Enable CORS to allow the frontend to communicate with this server
+CORS(app) 
 
-#Enable CORS to allow FE to talk to server
-CORS(app)
-
-#Defining API endpoint
-@app.route('/api/calculate',method=['POST']
+# --- Define the API Endpoint ---
+@app.route('/api/calculate', methods=['POST'])
 def calculate():
-    #Getting JSON data sent by FE
+    # Get the JSON data sent from the frontend
     data = request.get_json()
-    
-    #Get values from the data
+
+    # Extract the values
     operation = data.get('operation')
-    x=data.get('num1')
-    y=data.get('num2')
-    
-    #basic validation
+    x = data.get('num1')
+    y = data.get('num2')
+
+    # Basic validation
     if x is None or y is None:
-        return jsonify({'error': 'Those are not numbers'}), 400
-        
-    #Calling functions from the calculator
+        return jsonify({'error': 'Missing numbers'}), 400
+
+    # Call the functions from your calculator.py file
     if operation == "add":
-        result = calculator.add(x,y)
+        result = calculator.add(x, y)
     elif operation == "subtract":
         result = calculator.subtract(x, y)
     elif operation == "multiply":
-        # Using the 'multiple' function name from the file
+        # Using the 'multiple' function name from your file
         result = calculator.multiple(x, y)
     elif operation == "divide":
         result = calculator.divide(x, y)
     else:
         result = "Invalid operation"
-        
-    #Return the result in JSON format
-    return jsonfiy({'result':result})
+
+    # Return the result in JSON format
+    return jsonify({'result': result})
+
+# --- Run the Server ---
+if __name__ == '__main__':
+    # debug=True makes the server automatically reload when you save changes
+    app.run(debug=True)
