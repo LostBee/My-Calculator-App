@@ -2,7 +2,7 @@
 A simple calculator app built with Python.
 # Simple Full-Stack Calculator
 
-This project is a simple calculator built to demonstrate core programming concepts. It includes a backend logic module and two different frontends: a desktop GUI and a web interface.
+This project is a simple calculator built to practice core programming concepts. It includes a backend logic module and two different frontends: a desktop GUI and a web interface.
 
 This was built as part of a guided learning session.
 
